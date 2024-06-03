@@ -28,5 +28,5 @@ jobs:
         tags: 1,lasted
         registry: docker.io
         dockerfile: dockerfile
-        username: ${{ secrets.dockeruser }}
-        password: ${{ secrets.dockerpassword }}
+        username: ${{ secrets.DOCKERUSER }}
+        password: ${{ secrets.DOCKERPASSWORD }}
