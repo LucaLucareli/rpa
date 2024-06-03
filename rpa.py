@@ -30,8 +30,6 @@ discionario['cotacao_decimal'].append(valor)
 discionario["hora"].append(agora.strftime("%H:%M:%S"))
 discionario["data"].append(agora.strftime("%Y-%m-%d"))
 
-print(discionario)
-
 df = pd.DataFrame(discionario)
 
 driver.quit()
