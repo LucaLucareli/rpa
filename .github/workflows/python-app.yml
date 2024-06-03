@@ -21,16 +21,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-                - name: Docker Build & Push Action
-
-    - name: Publicando no docker
+    - name: Docker Build & Push Action
       uses: mr-smithers-excellent/docker-build-push@v6.4
       with:
-        # Name of the Docker image
         image: lucalucareli/rpa
         tags: 1,lasted
         registry: docker.io
         dockerfile: dockerfile
-        username: ${{secrets.dockeruser}}
-        password: ${{secrets.dockerpassword}}
+        username: ${{ secrets.dockeruser }}
+        password: ${{ secrets.dockerpassword }}
