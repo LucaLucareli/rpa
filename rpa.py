@@ -36,11 +36,11 @@ driver.quit()
 
 try:
     conn = pg.connect(
-        dbname="db_cotacoes",
-        user="postgres",
-        password="1234",
-        host="localhost",
-        port="5432"
+        dbname="defaultdb",
+        user="avnadmin",
+        password="AVNS_kwaAVMuqTGFk7-vlJrq",
+        host="pg-308d5cac-lucalucareli-3bb8.i.aivencloud.com",
+        port="11468"
     )
     
     cursor = conn.cursor()
