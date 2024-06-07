@@ -15,12 +15,12 @@ discionario = {
 }
 
 chrome_options = Options()
-chrome_options.add_argument('--headless')  
-driver = webdriver.Chrome(options=chrome_options) 
+chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(options = chrome_options)
+ 
+driver.get("https://www.google.com.br/search?q=d%C3%B3lar")
 
-driver.get('https://www.google.com/finance/quote/USD-BRL?sa=X&ved=2ahUKEwjqo6L0hvSEAxXXILkGHXR8D9oQmY0JegQIBhAv')
-
-elemento = driver.find_element(By.CLASS_NAME, 'fxKbKc')
+elemento = driver.find_element(By.CLASS_NAME, 'SwHCTb')
 agora = datetime.now() 
 valor = float(elemento.text.replace(',', '.'))
 
@@ -36,11 +36,11 @@ driver.quit()
 
 try:
     conn = pg.connect(
-        dbname="db_cotacoes",
-        user="postgres",
-        password="1234",
-        host="localhost",
-        port="5432"
+        dbname="defaultdb",
+        user="avnadmin",
+        password="AVNS_kwaAVMuqTGFk7-vlJrq",
+        host="pg-308d5cac-lucalucareli-3bb8.i.aivencloud.com",
+        port="11468"
     )
     
     cursor = conn.cursor()
@@ -57,3 +57,4 @@ finally:
         cursor.close()
     if conn:
         conn.close()
+        
