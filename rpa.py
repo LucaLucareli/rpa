@@ -15,12 +15,13 @@ discionario = {
 }
 
 chrome_options = Options()
-chrome_options.add_argument('--headless')  
-driver = webdriver.Chrome(options=chrome_options) 
+chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(options = chrome_options)
+ 
+driver.get("https://www.google.com.br/search?q=d%C3%B3lar")
+sleep(2)
 
-driver.get('https://www.google.com/finance/quote/USD-BRL?sa=X&ved=2ahUKEwjqo6L0hvSEAxXXILkGHXR8D9oQmY0JegQIBhAv')
-
-elemento = driver.find_element(By.CLASS_NAME, 'fxKbKc')
+elemento = driver.find_element(By.CLASS_NAME, 'SwHCTb')
 agora = datetime.now() 
 valor = float(elemento.text.replace(',', '.'))
 
